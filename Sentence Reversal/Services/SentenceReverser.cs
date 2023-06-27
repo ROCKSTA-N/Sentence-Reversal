@@ -6,8 +6,11 @@ namespace Sentence_Reversal.Services
     public class SentenceReverser : ISentenceReverser
     {
        public string ReverseSentence(string sentence){
-            var splitAndReversedSentence = sentence.Split(' ').Reverse();
-            return string.Join(" ", splitAndReversedSentence);
+            if(!string.IsNullOrEmpty(sentence)){
+                var splitAndReversedSentence = sentence.Split(' ').Reverse();
+                return string.Join(" ", splitAndReversedSentence);
+            }
+            return string.Empty;
        }
     }   
 }
